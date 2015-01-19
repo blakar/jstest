@@ -1,5 +1,6 @@
 /* Tests from http://code.tutsplus.com/tutorials/getting-cozy-with-underscorejs--net-24581 */
 
+
 QUnit.test("select test", function(assert){
 	var scores = [84, 99, 91, 65, 87, 55, 72, 68, 95, 43];
 	var topScorers = [];
@@ -14,3 +15,13 @@ QUnit.test("select test", function(assert){
 });
 
 
+// same as above but more OO approach
+QUnit.test("select test 2", function(assert){
+	var scores = [7, 23, 91, 8, 11, 3, 15, 8];
+
+	var evenScores = _(scores).select(function(score) { return score % 2 == 0; });
+
+	assert.strictEqual(evenScores.length, 2, "Number of items returned is correct");
+	assert.strictEqual(evenScores[0], 8, "First item is correct");
+	assert.strictEqual(evenScores[1], 8, "Second item is correct");
+});
