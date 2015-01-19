@@ -67,3 +67,11 @@ QUnit.test("select test 2", function(assert){
 	assert.strictEqual(names[2], 'LOS ANGELES', 'Third item correctly modified');
 });
 
+// All is useful if you need to check every value in a collection passes a certain
+// criteria
+QUnit.test('all test', function(assert){
+	var scores = [63, 89, 69, 80, 72, 52, 91];
+	var passed = _(scores).all(function(value) {return value > 50 && value < 100; });
+	
+	assert.strictEqual(passed, true, 'all passed');
+});
