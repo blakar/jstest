@@ -181,3 +181,11 @@ QUnit.test('reduce test', function(assert){
 	var sum = _.reduce(list, function(memo, num) { return memo + num; }, 0);
 	assert.strictEqual(sum, 6, 'Reduce list to a sum');
 });
+
+// _.random
+QUnit.test('random number', function(assert){
+	var rand = _.random(0, 100);
+	
+	assert.strictEqual(rand >= 0, true, 'random number higher than or equal to 0');
+	assert.strictEqual(rand <= 100, true, 'random number less than or equal to 100');
+});
