@@ -86,3 +86,15 @@ QUnit.test('uniq test', function(assert){
 	assert.strictEqual(result[0], 23, 'First unique item');
 	assert.strictEqual(result[1], 41, 'Second unique item');
 });
+
+// range - creates a range or list of numbers
+QUnit.test('range test', function(assert){
+	var tens = _.range(0, 100, 10);
+	
+	assert.strictEqual(tens.length, 10, 'Correct number of items');
+	assert.strictEqual(tens[0], 0, 'First item');
+	
+	for(var i = 0; i < 10; ++i){
+		assert.strictEqual(tens[i], i * 10, 'Correct item');
+	}
+});
