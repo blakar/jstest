@@ -47,3 +47,23 @@ QUnit.test("select test 2", function(assert){
 	assert.strictEqual(states[0], 'Washington', 'First state is correct');
 	assert.strictEqual(states[4], 'Texas', 'Fifth state is correct');
 });
+
+// Map creates an array from a collection where each element can be mutated or
+// otherwise changed through a function
+QUnit.test("select test 2", function(assert){
+	var locations =
+	[
+		{city: 'Seattle', state: 'Washington'},
+		{city: 'New York City', state: 'New York'},
+		{city: 'Los Angeles', state: 'California'},
+		{city: 'Anchorage', state: 'Alaska'},
+		{city: 'Austin', state: 'Texas'},
+	];
+	
+	var names = _(locations).pluck('city').map(function(value){return value.toUpperCase()});
+	
+	assert.strictEqual(names.length, 5, 'Correct number of items');
+	assert.strictEqual(names[0], 'SEATTLE', 'First item correctly modified');
+	assert.strictEqual(names[2], 'LOS ANGELES', 'Third item correctly modified');
+});
+
