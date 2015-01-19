@@ -113,3 +113,24 @@ QUnit.test('intersection test', function(assert){
 	assert.strictEqual(common[1], 40, 'Second item');
 	assert.strictEqual(common[2], 80, 'Third item');
 });
+
+QUnit.test('keys and values test', function(assert){
+	var car = {
+		make: 'Ford',
+		model: 'Focus',
+		year: '2012',
+		color: 'red'
+	};
+	
+	var keys = _.keys(car);
+	var values = _.values(car);
+	
+	assert.strictEqual(keys.length, 4, 'Correct number of keys');
+	assert.strictEqual(values.length, 4, 'Correct number of values');
+	
+	assert.strictEqual(keys[0], 'make', 'First key is correct');
+	assert.strictEqual(values[0], 'Ford', 'First value is correct');
+	
+	assert.strictEqual(keys[3], 'color', 'Last key is correct');
+	assert.strictEqual(values[3], 'red', 'First value is correct');
+});
