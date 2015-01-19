@@ -76,3 +76,13 @@ QUnit.test('all test', function(assert){
 	assert.strictEqual(passed, true, 'all passed');
 });
 
+// Uniq - loops over an array and removes all duplicate elements, providing only
+// unique elements
+QUnit.test('uniq test', function(assert){
+	var scores = [23, 41, 23, 23, 41];
+	var result = _.uniq(scores);
+	
+	assert.strictEqual(result.length, 2, 'Correct number of items');
+	assert.strictEqual(result[0], 23, 'First unique item');
+	assert.strictEqual(result[1], 41, 'Second unique item');
+});
