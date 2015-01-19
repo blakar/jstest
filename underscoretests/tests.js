@@ -155,3 +155,4 @@ QUnit.test('defaults test', function(assert){
 	assert.strictEqual(car.year, 2015, 'Car year is correct');
 	assert.strictEqual(car.color, 'red', 'Car color is correct');
 });
+
