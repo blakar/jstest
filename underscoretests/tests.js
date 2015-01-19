@@ -156,3 +156,20 @@ QUnit.test('defaults test', function(assert){
 	assert.strictEqual(car.color, 'red', 'Car color is correct');
 });
 
+// _.each
+//QUnit.test('each test', function(assert){
+//	var list = [1, 2, 3, 4, 5];
+//	_.each(list, function(x){ console.log();});
+//});
+
+// _.map (aka _.collect) - produces a new arrray of values by mapping each value
+// in list through a transformation function
+QUnit.test('map test', function(assert){
+	var list = [1, 2, 3];
+	var triples = _.map(list, function(num){ return num * 3; });
+	
+	assert.strictEqual(triples.length, 3, 'Correct list length');
+	assert.strictEqual(triples[0], 3, 'First item');
+	assert.strictEqual(triples[1], 6, 'Second item');
+	assert.strictEqual(triples[2], 9, 'Third item');
+});
