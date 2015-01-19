@@ -173,3 +173,11 @@ QUnit.test('map test', function(assert){
 	assert.strictEqual(triples[1], 6, 'Second item');
 	assert.strictEqual(triples[2], 9, 'Third item');
 });
+
+// _.reduce -- boils down a list of values into a single value. memo is the 
+// initial state of the reduction
+QUnit.test('reduce test', function(assert){
+	var list = [1, 2, 3];
+	var sum = _.reduce(list, function(memo, num) { return memo + num; }, 0);
+	assert.strictEqual(sum, 6, 'Reduce list to a sum');
+});
