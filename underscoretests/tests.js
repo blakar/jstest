@@ -27,7 +27,7 @@ QUnit.test("select test 2", function(assert){
 });
 
 // pluck - extracting specific property from each object
-QUnit.test("select test 2", function(assert){
+QUnit.test("pluck test", function(assert){
 	var locations =
 	[
 		{city: 'Seattle', state: 'Washington'},
@@ -50,7 +50,7 @@ QUnit.test("select test 2", function(assert){
 
 // Map creates an array from a collection where each element can be mutated or
 // otherwise changed through a function
-QUnit.test("select test 2", function(assert){
+QUnit.test("map test", function(assert){
 	var locations =
 	[
 		{city: 'Seattle', state: 'Washington'},
@@ -75,3 +75,4 @@ QUnit.test('all test', function(assert){
 	
 	assert.strictEqual(passed, true, 'all passed');
 });
+
