@@ -98,3 +98,18 @@ QUnit.test('range test', function(assert){
 		assert.strictEqual(tens[i], i * 10, 'Correct item');
 	}
 });
+
+// intersection - this method compares two arrays to each other and returns the
+// list of elements that are found in all of the passed arrays
+QUnit.test('intersection test', function(assert){
+	var tens = _.range(0, 100, 10);
+	var eights = _.range(0, 100, 8);
+	var fives = _.range(0, 100, 5);
+	
+	var common = _.intersection(tens, eights, fives);
+	
+	assert.strictEqual(common.length, 3, 'Correct number of intersected items');
+	assert.strictEqual(common[0], 0, 'First item');
+	assert.strictEqual(common[1], 40, 'Second item');
+	assert.strictEqual(common[2], 80, 'Third item');
+});
