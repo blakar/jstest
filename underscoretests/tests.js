@@ -114,6 +114,7 @@ QUnit.test('intersection test', function(assert){
 	assert.strictEqual(common[2], 80, 'Third item');
 });
 
+// keys and values
 QUnit.test('keys and values test', function(assert){
 	var car = {
 		make: 'Ford',
@@ -133,4 +134,24 @@ QUnit.test('keys and values test', function(assert){
 	
 	assert.strictEqual(keys[3], 'color', 'Last key is correct');
 	assert.strictEqual(values[3], 'red', 'First value is correct');
+});
+
+// method that is useful when you need to create objects with sensible defaults
+// when some may not be used when creating it
+QUnit.test('defaults test', function(assert){
+	var car = { make: 'Ford', model: 'Focus'};
+	var defaults = 
+	{
+		make: 'Ford',
+		model: 'Focus',
+		year: 2015,
+		color: 'red'
+	};
+	
+	_.defaults(car, defaults);
+	
+	assert.strictEqual(car.make, 'Ford', 'Car make is correct');
+	assert.strictEqual(car.model, 'Focus', 'Car model is correct');
+	assert.strictEqual(car.year, 2015, 'Car year is correct');
+	assert.strictEqual(car.color, 'red', 'Car color is correct');
 });
